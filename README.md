@@ -1,6 +1,6 @@
 # Getting Started with Create React App
 This Project was built by Sikiru Razak Boluwatife
-This projects serves the purpose of a Gaming E-commerce Store
+This projects serves the purpose of a Gaming E-commerce Store 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

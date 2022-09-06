@@ -1,0 +1,13 @@
+.cart-container {
+  background-color: rgba(#379200, 30%);
+  flex-grow: 1;
+  padding: 1rem;
+  // margin-left: 12rem;
+  // margin-top: 3rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, 15rem);
+  column-gap: 1rem;
+  row-gap: 1rem;
+  justify-items: center;
+  align-content: flex-start;
+}

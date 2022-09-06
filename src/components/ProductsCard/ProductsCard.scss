@@ -1,0 +1,34 @@
+.CardContainer {
+  border-radius: 6px;
+  width: 100%;
+  background-color: #fff;
+  padding-bottom: 0.3rem;
+  .img {
+    display: block;
+    height: 10rem;
+    width: 15rem;
+    border-radius: 6px;
+  }
+  .heart {
+    color: rgb(202, 6, 6);
+    cursor: pointer;
+  }
+  .star{
+    color: #d4af37;
+  }
+  .description {
+    padding: 0.1rem 0.5rem;
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.5rem;
+
+      .title {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}

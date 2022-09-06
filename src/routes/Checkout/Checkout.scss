@@ -1,0 +1,38 @@
+.checkoutPage {
+  background-color: rgba(#379200, 30%);
+  flex-grow: 1;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+.CheckoutContainer {
+  border-radius: 6px;
+  width: 75%;
+  background-color: #fff;
+  padding: 0.3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  .img {
+    height: 50vh;
+    width: 100%;
+    border-radius: 6px;
+  }
+  .description {
+    padding: 0.1rem 0.5rem;
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.5rem;
+
+      .title {
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
