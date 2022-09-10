@@ -11,7 +11,10 @@ import { BsHeart, BsHeartFill } from "react-icons/bs";
 import { AiFillStar, AiOutlineShoppingCart } from "react-icons/ai";
 import { selectCartItem } from "../../store/Cart/cart.selector";
 import { selectFavouriteItem } from "../../store/Favourite/Favourite.selector";
-import { addItemToCart } from "../../store/Cart/cart.Action";
+import {
+  addItemToCart,
+  removeItemFromCart,
+} from "../../store/Cart/cart.Action";
 import { addItemToFavourite } from "../../store/Favourite/Favourite.Action";
 import { removeItemFromFavourite } from "../../store/Favourite/Favourite.Action";
 
@@ -23,14 +26,16 @@ const ProductsCard = ({ img, title, classification, price, id }) => {
   const favouriteItem = useSelector(selectFavouriteItem);
   const Product = { id, img, title, classification, price };
   const addToCart = () => dispatch(addItemToCart(cartItem, Product));
+  const removeFromCart = () => dispatch(removeItemFromCart(cartItem, Product));
   const Favourite = () => dispatch(addItemToFavourite(favouriteItem, Product));
   const Unfavourite = () =>
     dispatch(removeItemFromFavourite(favouriteItem, Product));
   const navigate = useNavigate();
   const goToNavigateHandler = () => {
-    navigate("/checkout");
+    navigate(`/${id}`);
   };
   const active = favouriteItem.some((e) => e.id === Product.id);
+  const AddedToCart = cartItem.some((e) => e.id === Product.id);
   return (
     <div className="CardContainer">
       <img src={img} className="img" />
@@ -54,7 +59,7 @@ const ProductsCard = ({ img, title, classification, price, id }) => {
               <AiFillStar className="star" />
             </div>
           </div>
-          <div className="price">{price}</div>
+          <div className="price">${price}</div>
         </div>
         <div className="row row-3">
           <Button
@@ -68,9 +73,17 @@ const ProductsCard = ({ img, title, classification, price, id }) => {
           >
             Buy Now
           </Button>
-          <Button variant="text" color="secondary" onClick={addToCart}>
-            <AiOutlineShoppingCart /> +
-          </Button>
+          {AddedToCart ? (
+            <div className="removecart-btn"
+              onClick={removeFromCart}
+            >
+              <AiOutlineShoppingCart /> &#10003;
+            </div>
+          ) : (
+            <div className="addtocart-btn" onClick={addToCart}>
+              <AiOutlineShoppingCart /> +
+            </div>
+          )}
         </div>
       </div>
     </div>

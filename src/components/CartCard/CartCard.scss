@@ -1,26 +1,61 @@
-.CardContainer {
+.Cartcardcontainer {
+  border-radius: 6px;
+  width: 100%;
+  padding-bottom: 0.3rem;
+  display: flex;
+  align-items: stretch;
+  margin-bottom: 0.5rem;
+  .img {
+    height: 6rem;
     border-radius: 6px;
-    width: fit-content;
-    background-color: #fff;
-    padding-bottom: 0.3rem;
-    .img {
+    margin-right: 2rem;
+    @media screen and (max-width: 600px) {
+      margin-right: 1rem;
+      width: 10rem;
       height: 10rem;
-  
-      border-radius: 6px;
     }
-    .description {
-      padding: 0.1rem 0.5rem;
-  
-      .row {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding-bottom: 0.5rem;
-  
-        .title {
-          margin: 0;
-          padding: 0;
-        }
+  }
+  .description {
+    width: 85%;
+    display: flex;
+    align-items: center;
+    @media screen and (max-width: 600px) {
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      width: 100%;
+    }
+    .title {
+      width: 50%;
+    }
+    .classification {
+      width: 20%;
+    }
+    .price {
+      width: 10%;
+    }
+    .removeitem {
+      color: crimson;
+      justify-self: flex-end;
+      align-self: flex-end;
+      margin-right: 1rem;
+      width: 10%;
+    }
+    .count {
+      display: flex;
+      align-items: center;
+      width: 10%;
+      .value {
+        display: block;
+        margin-right: 0.5rem;
+        margin-left: 0.5rem;
+      }
+      .add,
+      .minus {
+        padding: 0.1rem 0.3rem;
+        border-radius: 50rem;
+        background-color: rgba(217, 221, 226, 0.8);
       }
     }
   }
+}

@@ -9,6 +9,7 @@ import CheckoutContext from "./Contexts/contexts";
 import MarketPage from "./routes/Market/Market";
 import SignInForm from "./components/authentication/signInForm";
 import SignUpForm from "./components/authentication/signUpForm";
+import { Products, Recommended } from "./assets/products";
 import {
   onAuthStateChangeListener,
   createUserDocument,
@@ -30,6 +31,7 @@ import {
   query,
   collection,
 } from "firebase/firestore";
+import ProductsCheckout from "./routes/Checkout/ProductsPages/ProductsCheckout";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -73,10 +75,16 @@ const App = () => {
           <Route path="/Favourites" element={<Favourites />} />
           <Route path="/Market" element={<MarketPage />} />
           <Route path="/Cart" element={<Cart />} />
-          <Route path="/Checkout" element={<Checkout />} />
+          {/* <Route path="/checkout/*" element={<ProductsCheckout />} /> */}
         </Route>
         <Route path="/SignIn/" element={<SignInForm />} />
         <Route path="/SignIn/SignUp" element={<SignUpForm />} />
+        {Products.map((item, index) => (
+          <Route path={`/${item.id}`} element={<Checkout Product={item} />} />
+        ))}
+        {Recommended.map((item, index) => (
+          <Route path={`/${item.id}`} element={<Checkout Product={item} />} />
+        ))}
       </Routes>
     </CheckoutContext>
   );

@@ -46,6 +46,7 @@ const SignInForm = () => {
   return (
     <div className="SignInFormContainer">
       <form className="signInForm" onSubmit={handleSubmit}>
+        <h1 className="title">SIGN IN</h1>
         <label className="label" htmlFor="email">
           Email
         </label>

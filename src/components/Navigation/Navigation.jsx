@@ -4,7 +4,7 @@ import React from "react";
 // import { Fragment } from "react";
 import { Autocomplete } from "@mui/material";
 import { TextField } from "@mui/material";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useParams } from "react-router-dom";
 import { Button } from "@mui/material";
 import { VscHome } from "react-icons/vsc";
 import { BsHeartFill, BsShop } from "react-icons/bs";
@@ -15,9 +15,11 @@ import { useSelector } from "react-redux";
 import { selectCurrentUser } from "../../store/User/user.selector";
 import { selectFavouriteItem } from "../../store/Favourite/Favourite.selector";
 import { selectCartItem } from "../../store/Cart/cart.selector";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 
 const Navigation = () => {
+  const { pathname } = useLocation();
+  console.log(pathname);
   const SearchOptions = Products.concat(Market).concat(Recommended);
   const user = useSelector(selectCurrentUser);
   const cartItem = useSelector(selectCartItem);
@@ -67,25 +69,49 @@ const Navigation = () => {
       </div>
       <div className="container">
         <div className="sidebar">
-          <Link className="sidebar-item" to="/">
-            <VscHome className="nav-icon" /> <div>Home</div>
+          <Link
+            className={
+              pathname === "/" ? "sidebar-item active" : "sidebar-item"
+            }
+            to="/"
+          >
+            <VscHome className="nav-icon" />
+            <div className="nav-label">Home</div>
           </Link>
-          <Link className="sidebar-item" to="/Favourites">
+          <Link
+            className={
+              pathname === "/Favourites"
+                ? "sidebar-item active"
+                : "sidebar-item"
+            }
+            to="/Favourites"
+          >
             <div className="icon">
               <BsHeartFill className="nav-icon favouriteIcon" />
               <div className="count">{favouriteItem.length}</div>
             </div>
-            <div>Favourites</div>
+            <div className="nav-label">Favourites</div>
           </Link>
-          <Link className="sidebar-item" to="/Market">
-            <BsShop className="nav-icon" /> <div>Market</div>
+          <Link
+            className={
+              pathname === "/Market" ? "sidebar-item active" : "sidebar-item"
+            }
+            to="/Market"
+          >
+            <BsShop className="nav-icon" />{" "}
+            <div className="nav-label">Market</div>
           </Link>
-          <Link className="sidebar-item" to="/Cart">
+          <Link
+            className={
+              pathname === "/Cart" ? "sidebar-item active" : "sidebar-item"
+            }
+            to="/Cart"
+          >
             <div className="icon">
               <AiOutlineShoppingCart className="nav-icon" />
               <div className="count">{cartItem.length}</div>
             </div>
-            <div>Cart</div>
+            <div className="nav-label">Cart</div>
           </Link>
         </div>
         <Outlet />
@@ -116,7 +142,7 @@ const Navigation = () => {
             <span>About us</span>
             <span>faqs</span>
             <span>services</span>
-            <span>support 24/7 page</span>
+            <span>support 24/7 Page</span>
           </div>
         </div>
       </footer>

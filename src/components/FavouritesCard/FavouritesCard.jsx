@@ -46,7 +46,7 @@ const FavouritesCard = ({ img, title, classification, price, id }) => {
               <AiFillStar className="star" />
             </div>
           </div>
-          <div className="price">{price}</div>
+          <div className="price">${price}</div>
         </div>
         <div className="row row-3">
           <Button

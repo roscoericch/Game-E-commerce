@@ -1,6 +1,6 @@
 .CardContainer {
   border-radius: 6px;
-  width: 100%;
+  // width: 100%;
   background-color: #fff;
   padding-bottom: 0.3rem;
   .img {
@@ -13,8 +13,8 @@
     color: rgb(202, 6, 6);
     cursor: pointer;
   }
-  .star{
-    color: #d4af37;
+  .star {
+    color: gold;
   }
   .description {
     padding: 0.1rem 0.5rem;
@@ -28,6 +28,18 @@
       .title {
         margin: 0;
         padding: 0;
+      }
+      .addtocart-btn {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        color: brown;
+      }
+      .removecart-btn {
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        color: lawngreen;
       }
     }
   }

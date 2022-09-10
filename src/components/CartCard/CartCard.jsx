@@ -8,58 +8,42 @@ import { DataContext } from "../../Contexts/contexts";
 import Button from "@mui/material/Button";
 import { AiFillStar } from "react-icons/ai";
 import { selectCartItem } from "../../store/Cart/cart.selector";
-import { removeItemFromCart } from "../../store/Cart/cart.Action";
+import {
+  removeItemFromCart,
+  addItemToCart,
+  reduceItemFromCart,
+} from "../../store/Cart/cart.Action";
 
-const CartCard = ({ img, title, classification, price, id }) => {
+const CartCard = ({ img, title, classification, price, id, quantity }) => {
   const dispatch = useDispatch();
   const cartItem = useSelector(selectCartItem);
-  const Product = { img, title, classification, price, id };
+  const Product = { img, title, classification, price, id, quantity };
   const removeItem = () => dispatch(removeItemFromCart(cartItem, Product));
   const { SetData } = useContext(DataContext);
+  const increaseItem = () => dispatch(addItemToCart(cartItem, Product));
+  const reduceItem = () => dispatch(reduceItemFromCart(cartItem, Product));
   const navigate = useNavigate();
   const goToNavigateHandler = () => {
     navigate("/checkout");
   };
   return (
-    <div className="CardContainer">
+    <div className="Cartcardcontainer">
       <img src={img} className="img" />
       <div className="description">
-        <div className="row row-1">
-          <h3 className="title">{title}</h3>
+        <h3 className="title">{title}</h3>
+        <div className="classification">{classification}</div>
+        <div className="price">${price}</div>
+        <div className="count">
+          <span className="minus" onClick={reduceItem}>
+            -
+          </span>
+          <span className="value">{quantity}</span>
+          <span className="add" onClick={increaseItem}>
+            +
+          </span>
         </div>
-        <div className="row row-2">
-          <div className="classification">
-            <div className="classification-text">{classification}</div>
-            <div className="rating">
-              <AiFillStar className="star" />
-              <AiFillStar className="star" />
-              <AiFillStar className="star" />
-              <AiFillStar className="star" />
-              <AiFillStar className="star" />
-            </div>
-          </div>
-          <div className="price">{price}</div>
-        </div>
-        <div className="row row-3">
-          <Button
-            variant="contained"
-            size="small"
-            color="success"
-            onClick={() => {
-              SetData(Product);
-              goToNavigateHandler();
-            }}
-          >
-            Buy Now
-          </Button>
-          <Button
-            variant="text"
-            size="small"
-            color="error"
-            onClick={removeItem}
-          >
-            remove x
-          </Button>
+        <div className="removeitem" onClick={removeItem}>
+          x
         </div>
       </div>
     </div>
