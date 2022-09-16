@@ -1,13 +1,12 @@
 import "./Navigation.scss";
 import BrandLogo from "./../../assets/img/GameStore.jpg";
-import React from "react";
-// import { Fragment } from "react";
 import { Autocomplete } from "@mui/material";
 import { TextField } from "@mui/material";
 import { Outlet, Link, useParams } from "react-router-dom";
 import { Button } from "@mui/material";
 import { VscHome } from "react-icons/vsc";
 import { BsHeartFill, BsShop } from "react-icons/bs";
+import { BiUser } from "react-icons/bi";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { Products, Market, Recommended } from "../../assets/products";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
@@ -16,9 +15,11 @@ import { selectCurrentUser } from "../../store/User/user.selector";
 import { selectFavouriteItem } from "../../store/Favourite/Favourite.selector";
 import { selectCartItem } from "../../store/Cart/cart.selector";
 import { useNavigate, useLocation } from "react-router-dom";
+import { useState } from "react";
 
 const Navigation = () => {
   const { pathname } = useLocation();
+  const [overlay, showOverlay] = useState(false);
   console.log(pathname);
   const SearchOptions = Products.concat(Market).concat(Recommended);
   const user = useSelector(selectCurrentUser);
@@ -32,7 +33,7 @@ const Navigation = () => {
     <>
       <div className="header">
         <img src={BrandLogo} className="logo-img" />
-        <Autocomplete
+        {/* <Autocomplete
           freeSolo
           id="free-solo-2-demo"
           disableClearable
@@ -52,20 +53,26 @@ const Navigation = () => {
               }}
             />
           )}
-        />
-        {user ? (
-          <Button variant="contained" onClick={signOutUser} color="error">
-            Sign Out
-          </Button>
-        ) : (
-          <Button
-            variant="contained"
-            color="success"
-            onClick={goToNavigateHandler}
-          >
-            SignIn
-          </Button>
-        )}
+        /> */}
+        <div className="profile">
+          <BiUser className="userIcon" onClick={() => showOverlay(!overlay)} />
+          {user && <h3>{user[0].displayName}</h3>}
+          <div className={overlay ? "overlay" : "hidden"}>
+            {user ? (
+              <Button variant="contained" onClick={signOutUser} color="error">
+                Log Out
+              </Button>
+            ) : (
+              <Button
+                variant="contained"
+                color="success"
+                onClick={goToNavigateHandler}
+              >
+                SignIn
+              </Button>
+            )}
+          </div>
+        </div>
       </div>
       <div className="container">
         <div className="sidebar">

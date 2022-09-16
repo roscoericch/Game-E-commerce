@@ -3,27 +3,26 @@
   // width: 100%;
   background-color: #fff;
   padding-bottom: 0.3rem;
+  width: 10rem;
   .img {
     display: block;
-    height: 10rem;
-    width: 15rem;
+    height: 8rem;
+    width: 10rem;
     border-radius: 6px;
   }
   .heart {
     color: rgb(202, 6, 6);
     cursor: pointer;
   }
-  .star {
-    color: gold;
-  }
+
   .description {
-    padding: 0.1rem 0.5rem;
+    padding: 0.1rem 0;
 
     .row {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding-bottom: 0.5rem;
+      padding-bottom: 0.2rem;
 
       .title {
         margin: 0;
@@ -34,12 +33,14 @@
         align-items: flex-end;
         justify-content: flex-end;
         color: brown;
+        font-size: 2rem;
       }
       .removecart-btn {
         display: flex;
         align-items: flex-end;
         justify-content: flex-end;
         color: lawngreen;
+        font-size: 2rem;
       }
     }
   }

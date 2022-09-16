@@ -9,6 +9,31 @@
   //   position: fixed;
   //   width: 99vw;
   //   z-index: 10;
+  .logo-img {
+    @media screen and (max-width: 600px) {
+      width: 7rem;
+    }
+  }
+  .profile {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    .userIcon {
+      font-size: 2rem;
+    }
+    .overlay {
+      padding: 0.5rem 0 0.5rem 0.5rem;
+      background-color: rgba(226, 216, 216, 0.384);
+      position: absolute;
+      top: 100%;
+      right: 0;
+      z-index: 2000;
+    }
+    .hidden {
+      display: none;
+    }
+  }
 }
 .container {
   display: flex;
@@ -92,7 +117,10 @@
   justify-content: center;
   padding: 0.5rem 4rem;
   background-color: #625d5d;
-
+  @media screen and (max-width: 600px) {
+    padding: 0.2rem;
+    justify-content: space-between;
+  }
   .Links {
     width: 100%;
     display: grid;

@@ -38,7 +38,14 @@ const ProductsCard = ({ img, title, classification, price, id }) => {
   const AddedToCart = cartItem.some((e) => e.id === Product.id);
   return (
     <div className="CardContainer">
-      <img src={img} className="img" />
+      <img
+        src={img}
+        className="img"
+        onClick={() => {
+          SetData(Product);
+          goToNavigateHandler();
+        }}
+      />
       <div className="description">
         <div className="row row-1">
           <h3 className="title">{title}</h3>
@@ -51,18 +58,28 @@ const ProductsCard = ({ img, title, classification, price, id }) => {
         <div className="row row-2">
           <div className="classification">
             <div className="classification-text">{classification}</div>
-            <div className="rating">
+            <div className="price">${price}</div>
+            {/* <div className="rating">
               <AiFillStar className="star" />
               <AiFillStar className="star" />
               <AiFillStar className="star" />
               <AiFillStar className="star" />
               <AiFillStar className="star" />
-            </div>
+            </div> */}
           </div>
-          <div className="price">${price}</div>
+          {AddedToCart ? (
+            <div className="removecart-btn" onClick={removeFromCart}>
+              <AiOutlineShoppingCart /> &#10003;
+            </div>
+          ) : (
+            <div className="addtocart-btn" onClick={addToCart}>
+              <AiOutlineShoppingCart /> +
+            </div>
+          )}
+          {/* <div className="price">${price}</div> */}
         </div>
         <div className="row row-3">
-          <Button
+          {/* <Button
             variant="contained"
             size="small"
             color="success"
@@ -72,8 +89,8 @@ const ProductsCard = ({ img, title, classification, price, id }) => {
             }}
           >
             Buy Now
-          </Button>
-          {AddedToCart ? (
+          </Button> */}
+          {/* {AddedToCart ? (
             <div className="removecart-btn"
               onClick={removeFromCart}
             >
@@ -83,7 +100,7 @@ const ProductsCard = ({ img, title, classification, price, id }) => {
             <div className="addtocart-btn" onClick={addToCart}>
               <AiOutlineShoppingCart /> +
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </div>
