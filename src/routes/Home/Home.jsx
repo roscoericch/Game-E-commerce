@@ -18,7 +18,7 @@ const Home = () => {
     <div className="home-container">
       <h3 className="classification">Your one stop online Gamestore</h3>
       <div className="latest-Game">
-        <img src="https:gdurl.com/EO6F" className="lg-img" />
+        <img src="https:gdurl.com/EO6F/download" className="lg-img" />
         <div className="content">
           <h2>GOD OF WAR</h2>
           <h3>"PARADISE"</h3>
