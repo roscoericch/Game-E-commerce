@@ -18,7 +18,13 @@ const Home = () => {
     <div className="home-container">
       <h3 className="classification">Your one stop online Gamestore</h3>
       <div className="latest-Game">
-        <img src="https:gdurl.com/EO6F/download" className="lg-img" />
+        <img
+          className="lg-img"
+          src="https://i.ibb.co/4fqbt9h/4x-J8-XB3bi888-QTLZYdl7-Oi0s.jpg"
+          alt="4x-J8-XB3bi888-QTLZYdl7-Oi0s"
+          border="0"
+        />
+
         <div className="content">
           <h2>GOD OF WAR</h2>
           <h3>"PARADISE"</h3>
@@ -67,7 +73,10 @@ const Home = () => {
         />
       ))}
       <div className="recommended-Game">
-        <img src="https:gdurl.com/83sT" className="lg-img" />
+        <img
+          src="https://i.ibb.co/4Wy8ZrX/78-A5-Nw4-Nqv-AVj0z04-ZW3lr-ZJ.jpg"
+          className="lg-img"
+        />
         <div className="content">
           <h2>SLAY MAMAKE</h2>
           <h3>"HABVIC"</h3>
