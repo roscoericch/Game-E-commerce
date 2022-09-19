@@ -69,11 +69,11 @@ const ProductsCard = ({ img, title, classification, price, id }) => {
           </div>
           {AddedToCart ? (
             <div className="removecart-btn" onClick={removeFromCart}>
-              <AiOutlineShoppingCart /> &#10003;
+              <AiOutlineShoppingCart /> <div>&#10003;</div>
             </div>
           ) : (
             <div className="addtocart-btn" onClick={addToCart}>
-              <AiOutlineShoppingCart /> +
+              <AiOutlineShoppingCart /> <div>+</div>
             </div>
           )}
           {/* <div className="price">${price}</div> */}

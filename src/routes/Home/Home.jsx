@@ -32,7 +32,7 @@ const Home = () => {
           <span>Bloody game another epic</span>
           <span>story line from sony</span>
           <Button variant="contained" color="success" className="btn">
-            Play Now
+            add to cart
           </Button>
         </div>
       </div>
@@ -62,7 +62,7 @@ const Home = () => {
           ))}
         </Swiper>
       </div>
-      {Products.filter((e, index) => index < 4).map((e, index) => (
+      {Products.filter((e, index) => index < 6).map((e, index) => (
         <ProductsCard
           Key={e.id}
           img={e.Image}
@@ -74,26 +74,73 @@ const Home = () => {
       ))}
       <div className="recommended-Game">
         <img
+          src="https://i.ibb.co/qYNvWw3/Mkbq-F5ve-MFZnm-QRtsbm-Qo-NZT.jpg"
+          className="lg-img"
+        />
+        <div className="content">
+          <h2>FIFA 23</h2>
+          <span>from EA SPORTS</span>
+          <Button variant="contained" color="success" className="btn">
+            add to cart
+          </Button>
+        </div>
+      </div>
+      <div className="recommended-Game">
+        <img
           src="https://i.ibb.co/4Wy8ZrX/78-A5-Nw4-Nqv-AVj0z04-ZW3lr-ZJ.jpg"
           className="lg-img"
         />
         <div className="content">
-          <h2>SLAY MAMAKE</h2>
-          <h3>"HABVIC"</h3>
-          <span>slay mamake is an adventrous,</span>
-          <span>exciting game another epic</span>
-          <span>story line from sony</span>
+          <h2>CALL OF DUTY</h2>
+          <h3>"LAST STAND"</h3>
+          <span>Adventrous and exciting game another epic</span>
+          <span>story line from activision</span>
           <Button variant="contained" color="success" className="btn">
-            Explore
+            add to cart
           </Button>
         </div>
       </div>
       <div className="swiper">
         <div className="swiper-class">
           <div>Recommended</div>
+          <motion.div
+            initial={{ scale: 1 }}
+            animate={{ scale: 1.5 }}
+            transition={{ duration: 1, repeat: Infinity }}
+          >
+            <HiArrowNarrowRight className="arrow-right" />
+          </motion.div>
         </div>
         <Swiper Autoplay EffectFade spaceBetween={50} slidesPerView={3}>
           {Products.filter((e, index) => index > 20 && index < 30).map(
+            (e, index) => (
+              <SwiperSlide>
+                <ProductsCard
+                  Key={e.id}
+                  img={e.Image}
+                  title={e.Name}
+                  classification={e.Genre}
+                  price={e.Price}
+                  id={e.id}
+                />
+              </SwiperSlide>
+            )
+          )}
+        </Swiper>
+      </div>
+      <div className="swiper">
+        <div className="swiper-class">
+          <div>RATED</div>
+          <motion.div
+            initial={{ scale: 1 }}
+            animate={{ scale: 1.5 }}
+            transition={{ duration: 1, repeat: Infinity }}
+          >
+            <HiArrowNarrowRight className="arrow-right" />
+          </motion.div>
+        </div>
+        <Swiper Autoplay EffectFade spaceBetween={50} slidesPerView={3}>
+          {Products.filter((e, index) => index > 7 && index < 20).map(
             (e, index) => (
               <SwiperSlide>
                 <ProductsCard

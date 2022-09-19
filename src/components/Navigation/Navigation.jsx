@@ -140,7 +140,7 @@ const Navigation = () => {
             <span>shipping guide</span>
             <span>store location</span>
             <span>affliates</span>
-            <span>customer point policy</span>
+            <span>policy</span>
             <span>Terms and Condition</span>
           </div>
           <div className="col col3">
@@ -149,7 +149,7 @@ const Navigation = () => {
             <span>About us</span>
             <span>faqs</span>
             <span>services</span>
-            <span>support 24/7 Page</span>
+            <span>support</span>
           </div>
         </div>
       </footer>

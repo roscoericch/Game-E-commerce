@@ -43,10 +43,10 @@ const Checkout = ({ Product }) => {
           </div>
           <div className="row row-4">
             <Button variant="contained" color="success">
-              Purchase
+              BUY NOW
             </Button>
             <div className="quantity">
-              <div className="price">{Price}</div>
+              <div className="price">${Price}</div>
             </div>
           </div>
         </div>

@@ -27,20 +27,35 @@
       .title {
         margin: 0;
         padding: 0;
+        @media screen and (max-width: 600px) {
+          font-size: 1rem;
+        }
       }
       .addtocart-btn {
         display: flex;
-        align-items: flex-end;
+        align-items: flex-start;
         justify-content: flex-end;
-        color: brown;
+        color: rgb(224, 118, 118);
         font-size: 2rem;
+        @media screen and (max-width: 600px) {
+          font-size: 1.2rem;
+        }
+        div {
+          font-size: 0.5rem;
+        }
       }
       .removecart-btn {
         display: flex;
-        align-items: flex-end;
+        align-items: flex-start;
         justify-content: flex-end;
         color: lawngreen;
         font-size: 2rem;
+        @media screen and (max-width: 600px) {
+          font-size: 1.2rem;
+        }
+        div {
+          font-size: 0.5rem;
+        }
       }
     }
   }

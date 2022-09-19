@@ -203,10 +203,10 @@ export const Products = [
   },
   {
     id: 24,
-    Name: "Dead By Daylight",
+    Name: "Warframe",
     Price: 55,
     Genre: "fantasy",
-    Image: "https://ibb.co/3Fvy89K/icon0.jpg",
+    Image: "https://i.ibb.co/pQ6MnwL/l-Hkupxo-Xtll-Hqr5-WFZcx-Lug-M.jpg",
     category: "game",
   },
   {
@@ -354,15 +354,15 @@ export const Products = [
     category: "game",
   },
   {
-    id: 42,
+    id: 43,
     Name: "Wonderlands",
-    Price: 89,
+    Price: 90,
     Genre: "Roleplay",
     Image: "https://i.ibb.co/6wx0vb0/2gh2zdt2-MQCLWLGk-B9-HTPGm-R.jpg",
     category: "game",
   },
   {
-    id: 43,
+    id: 44,
     Name: "YU-GI-OH!",
     Price: 49,
     Genre: "Roleplay",
