@@ -1,0 +1,62 @@
+.mediumCardContainer {
+  border-radius: 6px;
+  width: 100%;
+  background-color: #fff;
+  padding-bottom: 0.3rem;
+  // width: 10rem;
+  .img {
+    display: block;
+    height: 10rem;
+    width: 100%;
+    border-radius: 6px;
+  }
+  .heart {
+    color: rgb(202, 6, 6);
+    cursor: pointer;
+  }
+
+  .description {
+    padding: 0.1rem 0.5rem;
+
+    .row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 0.2rem;
+
+      .title {
+        margin: 0;
+        padding: 0;
+        @media screen and (max-width: 600px) {
+          font-size: 1rem;
+        }
+      }
+      .addtocart-btn {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        color: rgb(224, 118, 118);
+        font-size: 2rem;
+        @media screen and (max-width: 600px) {
+          font-size: 1.2rem;
+        }
+        div {
+          font-size: 0.5rem;
+        }
+      }
+      .removecart-btn {
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-end;
+        color: lawngreen;
+        font-size: 2rem;
+        @media screen and (max-width: 600px) {
+          font-size: 1.2rem;
+        }
+        div {
+          font-size: 0.5rem;
+        }
+      }
+    }
+  }
+}
