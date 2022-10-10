@@ -1,13 +1,13 @@
 import React from "react";
 
 import "./Market.scss";
-import ProductsCard from "../../components/ProductsCard/ProductsCard";
+import MediumCard from "../../components/MediumCard/MediumCard";
 import { Market } from "../../assets/products";
 const MarketPage = () => {
   return (
     <div className="market-container">
       {Market.map((e) => (
-        <ProductsCard
+        <MediumCard
           Key={e.id}
           img={e.Img}
           title={e.Name}

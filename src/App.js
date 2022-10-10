@@ -31,7 +31,7 @@ import {
   query,
   collection,
 } from "firebase/firestore";
-import ProductsCheckout from "./routes/Checkout/ProductsPages/ProductsCheckout";
+
 
 const App = () => {
   const dispatch = useDispatch();
@@ -75,7 +75,6 @@ const App = () => {
           <Route path="/Favourites" element={<Favourites />} />
           <Route path="/Market" element={<MarketPage />} />
           <Route path="/Cart" element={<Cart />} />
-          {/* <Route path="/checkout/*" element={<ProductsCheckout />} /> */}
         </Route>
         <Route path="/SignIn/" element={<SignInForm />} />
         <Route path="/SignIn/SignUp" element={<SignUpForm />} />

@@ -24,11 +24,11 @@ const FavouritesCard = ({ img, title, classification, price, id }) => {
   const addToCart = () => dispatch(addItemToCart(cartItem, Product));
   const navigate = useNavigate();
   const goToNavigateHandler = () => {
-    navigate("/checkout");
+    navigate(`/${id}`);
   };
   return (
     <div className="FavouritesContainer">
-      <img src={img} className="img" />
+      <img src={img} className="img" onClick={goToNavigateHandler} />
       <div className="description">
         <div className="row row-1">
           <h3 className="title">{title}</h3>
@@ -38,13 +38,6 @@ const FavouritesCard = ({ img, title, classification, price, id }) => {
         <div className="row row-2">
           <div className="classification">
             <div className="classification-text">{classification}</div>
-            <div className="rating">
-              <AiFillStar className="star" />
-              <AiFillStar className="star" />
-              <AiFillStar className="star" />
-              <AiFillStar className="star" />
-              <AiFillStar className="star" />
-            </div>
           </div>
           <div className="price">${price}</div>
         </div>

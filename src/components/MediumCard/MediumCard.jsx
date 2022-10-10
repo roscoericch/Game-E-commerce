@@ -3,7 +3,6 @@ import "./MediumCard.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
 import { DataContext } from "../../Contexts/contexts";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
@@ -20,7 +19,6 @@ import { removeItemFromFavourite } from "../../store/Favourite/Favourite.Action"
 
 const MediumCard = ({ img, title, classification, price, id }) => {
   //   const [active, SetActive] = useState(false);
-  const { SetData } = useContext(DataContext);
   const dispatch = useDispatch();
   const cartItem = useSelector(selectCartItem);
   const favouriteItem = useSelector(selectFavouriteItem);
@@ -42,7 +40,6 @@ const MediumCard = ({ img, title, classification, price, id }) => {
         src={img}
         className="img"
         onClick={() => {
-          SetData(Product);
           goToNavigateHandler();
         }}
       />
@@ -69,7 +66,6 @@ const MediumCard = ({ img, title, classification, price, id }) => {
               <AiOutlineShoppingCart /> <div>+</div>
             </div>
           )}
-          {/* <div className="price">${price}</div> */}
         </div>
         <div className="row row-3">
           {/* <Button

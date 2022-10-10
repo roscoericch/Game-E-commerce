@@ -1,5 +1,6 @@
 .home-container {
-  // background-color: rgba(#379200, 30%);
+  position: relative;
+  background-color: none;
   flex-grow: 1;
   padding: 1rem;
   //   margin-left: 12rem;
@@ -11,74 +12,20 @@
   column-gap: 1rem;
   justify-items: center;
   align-content: flex-start;
-
-  .latest-Game {
-    position: relative;
-    // background-image: url(../../assets/img/Harvic.jpg);
-    // background-size: cover;
-    grid-column: 1 / -1;
-    display: flex;
-    justify-content: center;
-    .lg-img {
-      width: 100%;
-      border-radius: 10px;
-    }
-    .tag {
-      background-color: rgba(3, 3, 3, 0.26);
-      border-radius: 5px;
-      padding: 0.5rem;
-      position: absolute;
-      top: 2%;
-      right: 5%;
-
-      .star {
-        color: gold;
-        font-size: 1rem;
-        margin-bottom: 0;
-      }
-    }
-    .content {
-      display: flex;
-      flex-direction: column;
-      justify-self: stretch;
-      justify-content: center;
-      position: absolute;
-      bottom: 5%;
-      left: 10%;
-    }
-
-    border-radius: 10px;
-    // width: 100vw;
-    color: #fff;
-    // padding: 1rem;
-    // height: 40vh;
-    *:not(:last-child) {
-      padding-bottom: 0.5rem;
-    }
-    h2,
-    h3 {
-      padding: 0;
-      margin: 0;
-    }
-    .btn {
-      display: inline-flex;
-      align-self: flex-start;
-      justify-self: flex-start;
-    }
-    .classification {
-      grid-column: 1/-1;
-      justify-self: baseline;
-    }
-  }
   .section {
     grid-column: 1/-1;
-    padding: 0.5rem;
-    background-color: grey;
+    padding: 1rem;
+    background-color: none;
     width: 100%;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     column-gap: 1rem;
     row-gap: 1rem;
+
+    background-image: url("https://i.ibb.co/FDvLdDv/T45i-RN1bhi-Wc-JUz-ST6-UFGBv-O.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
   }
   .swiper {
     width: 100%;
@@ -97,6 +44,5 @@
   }
   .classification {
     grid-column: 1/-1;
-    justify-self: baseline;
   }
 }

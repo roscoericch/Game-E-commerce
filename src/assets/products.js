@@ -219,7 +219,7 @@ export const Products = [
   },
   {
     id: 26,
-    Name: "Red Dead Redemption",
+    Name: "Redemption",
     Price: 99,
     Genre: "fantasy",
     Image: "https://i.ibb.co/V3YjwWD/icon0-tv1.jpg",
