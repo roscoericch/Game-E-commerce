@@ -5,11 +5,10 @@ import Navigation from "./components/Navigation/Navigation";
 import Favourites from "./routes/Favourites/Favourites";
 import Cart from "./routes/Cart/Cart";
 import Checkout from "./routes/Checkout/Checkout";
-import CheckoutContext from "./Contexts/contexts";
 import MarketPage from "./routes/Market/Market";
 import SignInForm from "./components/authentication/signInForm";
 import SignUpForm from "./components/authentication/signUpForm";
-import { Products, Recommended } from "./assets/products";
+import { Products, Recommended, Market } from "./assets/products";
 import {
   onAuthStateChangeListener,
   createUserDocument,
@@ -31,7 +30,6 @@ import {
   query,
   collection,
 } from "firebase/firestore";
-
 
 const App = () => {
   const dispatch = useDispatch();
@@ -68,24 +66,25 @@ const App = () => {
     return unsubscribe;
   }, []);
   return (
-    <CheckoutContext>
-      <Routes>
-        <Route path="/" element={<Navigation />}>
-          <Route index element={<Home />} />
-          <Route path="/Favourites" element={<Favourites />} />
-          <Route path="/Market" element={<MarketPage />} />
-          <Route path="/Cart" element={<Cart />} />
-        </Route>
-        <Route path="/SignIn/" element={<SignInForm />} />
-        <Route path="/SignIn/SignUp" element={<SignUpForm />} />
-        {Products.map((item, index) => (
-          <Route path={`/${item.id}`} element={<Checkout Product={item} />} />
-        ))}
-        {Recommended.map((item, index) => (
-          <Route path={`/${item.id}`} element={<Checkout Product={item} />} />
-        ))}
-      </Routes>
-    </CheckoutContext>
+    <Routes>
+      <Route path="/" element={<Navigation />}>
+        <Route index element={<Home />} />
+        <Route path="/Favourites" element={<Favourites />} />
+        <Route path="/Market" element={<MarketPage />} />
+        <Route path="/Cart" element={<Cart />} />
+      </Route>
+      <Route path="/SignIn/" element={<SignInForm />} />
+      <Route path="/SignIn/SignUp" element={<SignUpForm />} />
+      {Products.map((item, index) => (
+        <Route path={`/${item.id}`} element={<Checkout Product={item} />} />
+      ))}
+      {Recommended.map((item, index) => (
+        <Route path={`/${item.id}`} element={<Checkout Product={item} />} />
+      ))}
+      {Market.map((item, index) => (
+        <Route path={`/${item.id}`} element={<Checkout Product={item} />} />
+      ))}
+    </Routes>
   );
 };
 

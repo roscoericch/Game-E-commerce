@@ -3,8 +3,6 @@ import "./ProductsCard.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { DataContext } from "../../Contexts/contexts";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import { BsHeart, BsHeartFill } from "react-icons/bs";
@@ -20,7 +18,6 @@ import { removeItemFromFavourite } from "../../store/Favourite/Favourite.Action"
 
 const ProductsCard = ({ img, title, classification, price, id }) => {
   //   const [active, SetActive] = useState(false);
-  const { SetData } = useContext(DataContext);
   const dispatch = useDispatch();
   const cartItem = useSelector(selectCartItem);
   const favouriteItem = useSelector(selectFavouriteItem);
@@ -42,7 +39,6 @@ const ProductsCard = ({ img, title, classification, price, id }) => {
         src={img}
         className="img"
         onClick={() => {
-          SetData(Product);
           goToNavigateHandler();
         }}
       />

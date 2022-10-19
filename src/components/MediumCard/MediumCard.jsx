@@ -3,7 +3,6 @@ import "./MediumCard.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { DataContext } from "../../Contexts/contexts";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import { BsHeart, BsHeartFill } from "react-icons/bs";

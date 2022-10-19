@@ -3,8 +3,6 @@ import "./FavouritesCard.scss";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { DataContext } from "../../Contexts/contexts";
 import Button from "@mui/material/Button";
 import { BsHeartFill } from "react-icons/bs";
 import { AiFillStar, AiOutlineShoppingCart, AiFillHeart } from "react-icons/ai";
@@ -14,7 +12,6 @@ import { removeItemFromFavourite } from "../../store/Favourite/Favourite.Action"
 import { selectFavouriteItem } from "../../store/Favourite/Favourite.selector";
 
 const FavouritesCard = ({ img, title, classification, price, id }) => {
-  const { SetData } = useContext(DataContext);
   const dispatch = useDispatch();
   const cartItem = useSelector(selectCartItem);
   const favouriteItem = useSelector(selectFavouriteItem);
@@ -47,7 +44,6 @@ const FavouritesCard = ({ img, title, classification, price, id }) => {
             size="small"
             color="success"
             onClick={() => {
-              SetData(Product);
               goToNavigateHandler();
             }}
           >

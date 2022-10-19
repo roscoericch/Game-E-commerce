@@ -3,8 +3,6 @@ import "./CartCard.scss";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
-import { DataContext } from "../../Contexts/contexts";
 import Button from "@mui/material/Button";
 import { AiFillStar } from "react-icons/ai";
 import { selectCartItem } from "../../store/Cart/cart.selector";
@@ -19,7 +17,6 @@ const CartCard = ({ img, title, classification, price, id, quantity }) => {
   const cartItem = useSelector(selectCartItem);
   const Product = { img, title, classification, price, id, quantity };
   const removeItem = () => dispatch(removeItemFromCart(cartItem, Product));
-  const { SetData } = useContext(DataContext);
   const increaseItem = () => dispatch(addItemToCart(cartItem, Product));
   const reduceItem = () => dispatch(reduceItemFromCart(cartItem, Product));
   const navigate = useNavigate();

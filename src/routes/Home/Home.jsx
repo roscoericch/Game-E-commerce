@@ -8,24 +8,82 @@ import { Products, Recommended } from "../../assets/products";
 import { Button } from "@mui/material";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { AiFillStar } from "react-icons/ai";
-import { Autoplay, EffectFade } from "swiper";
+import { Autoplay, EffectFade, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
-import "swiper/css";
-import "swiper/css/autoplay";
-import "swiper/css/effect-fade";
-import "swiper/css/scrollbar";
+import "swiper/scss";
+import "swiper/scss/autoplay";
+import "swiper/scss/effect-fade";
+import "swiper/scss/pagination";
+import "swiper/scss/scrollbar";
 const Home = () => {
   return (
     <div className="home-container">
       <h3 className="classification">Your one stop online Gamestore</h3>
-      <LargeCard
-        img="https://i.ibb.co/4fqbt9h/4x-J8-XB3bi888-QTLZYdl7-Oi0s.jpg"
-        id="featured1"
-        title="God Of War"
-        classification="adventure"
-        price={110}
-      />
+      <div className="swiper">
+        <Swiper
+          modules={[Pagination, EffectFade, Autoplay]}
+          centeredSlides={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          effect="fade"
+          pagination={true}
+          spaceBetween={30}
+        >
+          <SwiperSlide>
+            <LargeCard
+              img="https://i.ibb.co/4fqbt9h/4x-J8-XB3bi888-QTLZYdl7-Oi0s.jpg"
+              id="featured1"
+              title="God Of War"
+              classification="adventure"
+              price={110}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <LargeCard
+              img="https://i.ibb.co/gwkBPDP/b-F1qm-EL5-RM6a-Mf-L0o-Lcx-Re8-B.jpg"
+              id="featuredIV"
+              title="Mortal Kombat"
+              classification="adventure"
+              price={80}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <LargeCard
+              img="https://i.ibb.co/G7Fz9m6/a3a-Wk7-Rdt8-Lod5-GHVwj-SA8-BW.jpg"
+              id="featuredV"
+              title="SteelRising"
+              classification="adventure"
+              price={80}
+            />
+          </SwiperSlide>
+        </Swiper>
+      </div>
+      <div className="bg-class">
+        <LargeCard
+          img="https://i.ibb.co/4fqbt9h/4x-J8-XB3bi888-QTLZYdl7-Oi0s.jpg"
+          id="featured1"
+          title="God Of War"
+          classification="adventure"
+          price={110}
+        />
+        <LargeCard
+          img="https://i.ibb.co/gwkBPDP/b-F1qm-EL5-RM6a-Mf-L0o-Lcx-Re8-B.jpg"
+          id="featuredIV"
+          title="Mortal Kombat"
+          classification="adventure"
+          price={80}
+        />
+        <LargeCard
+          img="https://i.ibb.co/G7Fz9m6/a3a-Wk7-Rdt8-Lod5-GHVwj-SA8-BW.jpg"
+          id="featuredV"
+          title="SteelRising"
+          classification="adventure"
+          price={80}
+        />
+      </div>
       <div className="swiper">
         <div className="swiper-class">
           <div>New</div>
@@ -61,6 +119,18 @@ const Home = () => {
             classification={e.Genre}
             price={e.Price}
             id={e.id}
+          />
+        ))}
+      </div>
+      <div className="bg-class">
+        {Products.filter((e, index) => index >= 12).map((e) => (
+          <LargeCard
+            key={e.id}
+            img={e.Image}
+            id={e.id}
+            title={e.Name}
+            classification={e.category}
+            price={e.Price}
           />
         ))}
       </div>

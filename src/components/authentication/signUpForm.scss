@@ -3,16 +3,24 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-image: url(../../assets/img/auth-bg2.jpg);
+  background-image: url(https://i.ibb.co/pbPJ36M/Ry0b7-FGq-Nj-HQv-NRp-RE9-Rj-U3-I.jpg);
   background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   .signUpForm {
-    width: 30%;
-    padding: 1rem;
+    width: 50%;
+    @media only screen and (max-width: 600px) {
+      width: 80%;
+    }
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
     background-color: rgba(255, 255, 255, 0.53);
+    .title {
+      align-self: center;
+    }
     .label {
       //   display: inline-flex;
       //   color: #fff;
@@ -20,7 +28,7 @@
     }
     .input {
       //   display: block;
-      width: 80%;
+      width: 90%;
       padding: 0.5rem;
     }
   }

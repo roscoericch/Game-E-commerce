@@ -1,9 +1,6 @@
 import React from "react";
 import "./Checkout.scss";
 import { useEffect } from "react";
-import { useContext } from "react";
-// import { useParams } from "react-router-dom";
-import { DataContext } from "../../Contexts/contexts";
 import Button from "@mui/material/Button";
 import { BsHeart } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
