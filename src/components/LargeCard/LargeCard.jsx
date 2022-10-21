@@ -4,12 +4,18 @@ import { selectCartItem } from "../../store/Cart/cart.selector";
 import { addItemToCart } from "../../store/Cart/cart.Action";
 import { AiFillStar } from "react-icons/ai";
 import { Button } from "@mui/material";
+import { motion } from "framer-motion";
 const LargeCard = ({ id, img, title, classification, price }) => {
   const cartItem = useSelector(selectCartItem);
   const dispatch = useDispatch();
   const addToCart = (Product) => dispatch(addItemToCart(cartItem, Product));
   return (
-    <div className="latest-Game">
+    <motion.div
+      initial={{ rotateY: "180deg" }}
+      whileInView={{ rotateY: "0deg" }}
+      transition={{ duration: 1 }}
+      className="latest-Game"
+    >
       <img
         className="lg-img"
         src={img}
@@ -38,7 +44,7 @@ const LargeCard = ({ id, img, title, classification, price }) => {
           add to cart
         </Button>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

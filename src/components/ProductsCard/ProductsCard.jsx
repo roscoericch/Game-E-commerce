@@ -53,15 +53,7 @@ const ProductsCard = ({ img, title, classification, price, id }) => {
         </div>
         <div className="row row-2">
           <div className="classification">
-            <div className="classification-text">{classification}</div>
             <div className="price">${price}</div>
-            {/* <div className="rating">
-              <AiFillStar className="star" />
-              <AiFillStar className="star" />
-              <AiFillStar className="star" />
-              <AiFillStar className="star" />
-              <AiFillStar className="star" />
-            </div> */}
           </div>
           {AddedToCart ? (
             <div className="removecart-btn" onClick={removeFromCart}>

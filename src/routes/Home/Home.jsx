@@ -8,27 +8,31 @@ import { Products, Recommended } from "../../assets/products";
 import { Button } from "@mui/material";
 import { HiArrowNarrowRight } from "react-icons/hi";
 import { AiFillStar } from "react-icons/ai";
-import { Autoplay, EffectFade, Pagination } from "swiper";
+import { Autoplay, EffectFlip, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/scss";
 import "swiper/scss/autoplay";
-import "swiper/scss/effect-fade";
+import "swiper/scss/effect-flip";
 import "swiper/scss/pagination";
 import "swiper/scss/scrollbar";
 const Home = () => {
   return (
-    <div className="home-container">
+    <motion.div
+      initial={{ opacity: 0, translateY: "200px" }}
+      animate={{ opacity: 1, translateY: "0px" }}
+      className="home-container"
+    >
       <h3 className="classification">Your one stop online Gamestore</h3>
       <div className="swiper">
         <Swiper
-          modules={[Pagination, EffectFade, Autoplay]}
+          modules={[Pagination, EffectFlip, Autoplay]}
           centeredSlides={true}
           autoplay={{
             delay: 3000,
             disableOnInteraction: false,
           }}
-          effect="fade"
+          effect="flip"
           pagination={true}
           spaceBetween={30}
         >
@@ -105,6 +109,7 @@ const Home = () => {
                 classification={e.Genre}
                 price={e.Price}
                 id={e.id}
+                category={e.category}
               />
             </SwiperSlide>
           ))}
@@ -119,6 +124,7 @@ const Home = () => {
             classification={e.Genre}
             price={e.Price}
             id={e.id}
+            category={e.category}
           />
         ))}
       </div>
@@ -133,21 +139,63 @@ const Home = () => {
             price={e.Price}
           />
         ))}
+        <LargeCard
+          img="https://i.ibb.co/qYNvWw3/Mkbq-F5ve-MFZnm-QRtsbm-Qo-NZT.jpg"
+          id="featured2"
+          title="FIFA 23"
+          classification="adventure"
+          price={150}
+        />
+        <LargeCard
+          img="https://i.ibb.co/4Wy8ZrX/78-A5-Nw4-Nqv-AVj0z04-ZW3lr-ZJ.jpg"
+          id="featured2"
+          title="Call of duty"
+          classification="adventure"
+          price={180}
+        />
       </div>
-      <LargeCard
-        img="https://i.ibb.co/qYNvWw3/Mkbq-F5ve-MFZnm-QRtsbm-Qo-NZT.jpg"
-        id="featured2"
-        title="FIFA 23"
-        classification="adventure"
-        price={150}
-      />
-      <LargeCard
-        img="https://i.ibb.co/4Wy8ZrX/78-A5-Nw4-Nqv-AVj0z04-ZW3lr-ZJ.jpg"
-        id="featured2"
-        title="Call of duty"
-        classification="adventure"
-        price={180}
-      />
+      <div className="swiper">
+        <Swiper
+          modules={[Pagination, EffectFlip, Autoplay]}
+          centeredSlides={true}
+          autoplay={{
+            delay: 3000,
+            disableOnInteraction: false,
+          }}
+          effect="flip"
+          pagination={true}
+          spaceBetween={30}
+        >
+          <SwiperSlide>
+            <LargeCard
+              img="https://i.ibb.co/4fqbt9h/4x-J8-XB3bi888-QTLZYdl7-Oi0s.jpg"
+              id="featured1"
+              title="God Of War"
+              classification="adventure"
+              price={110}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <LargeCard
+              img="https://i.ibb.co/qYNvWw3/Mkbq-F5ve-MFZnm-QRtsbm-Qo-NZT.jpg"
+              id="featured2"
+              title="FIFA 23"
+              classification="adventure"
+              price={150}
+            />
+          </SwiperSlide>
+          <SwiperSlide>
+            <LargeCard
+              img="https://i.ibb.co/4Wy8ZrX/78-A5-Nw4-Nqv-AVj0z04-ZW3lr-ZJ.jpg"
+              id="featured2"
+              title="Call of duty"
+              classification="adventure"
+              price={180}
+            />
+          </SwiperSlide>
+        </Swiper>
+      </div>
+
       <div className="swiper">
         <div className="swiper-class">
           <div>Recommended</div>
@@ -170,6 +218,7 @@ const Home = () => {
                   classification={e.Genre}
                   price={e.Price}
                   id={e.id}
+                  category={e.category}
                 />
               </SwiperSlide>
             )
@@ -198,13 +247,14 @@ const Home = () => {
                   classification={e.Genre}
                   price={e.Price}
                   id={e.id}
+                  category={e.category}
                 />
               </SwiperSlide>
             )
           )}
         </Swiper>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

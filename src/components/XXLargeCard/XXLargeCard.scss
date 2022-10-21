@@ -6,6 +6,9 @@
   .lg-img {
     width: 100vw;
     height: 30rem;
+    @media only screen and (max-width: 600px) {
+      height: 20rem;
+    }
   }
   .tag {
     background-color: rgba(3, 3, 3, 0.26);

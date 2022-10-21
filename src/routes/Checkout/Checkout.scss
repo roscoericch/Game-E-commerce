@@ -5,7 +5,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 98vh;
+  height: 95vh;
 }
 .CheckoutContainer {
   border-radius: 6px;
@@ -19,6 +19,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
+  .nav-back{
+    position: absolute;
+    top:2%;
+    left: 2%;
+  }
   .img {
     height: 50vh;
     width: 100%;

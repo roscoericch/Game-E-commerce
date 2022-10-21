@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import Button from "@mui/material/Button";
 import { BsHeart } from "react-icons/bs";
 import { AiFillStar } from "react-icons/ai";
+import { RiArrowDropLeftLine } from "react-icons/ri";
 
 const Checkout = ({ Product }) => {
   // const { data } = useContext(DataContext);
@@ -17,6 +18,7 @@ const Checkout = ({ Product }) => {
   return (
     <div className="checkoutPage">
       <div className="CheckoutContainer">
+        <RiArrowDropLeftLine onClick={()=>{}} className="nav-back" />
         <img src={Image} className="img" />
         <div className="description">
           <div className="row row-1">

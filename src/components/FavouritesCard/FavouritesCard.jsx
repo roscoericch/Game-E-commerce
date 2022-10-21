@@ -29,12 +29,10 @@ const FavouritesCard = ({ img, title, classification, price, id }) => {
       <div className="description">
         <div className="row row-1">
           <h3 className="title">{title}</h3>
-          {/* <AiFillHeart className="heart" onClick={removeItem} /> */}
           <BsHeartFill className="heart" onClick={removeItem} />
         </div>
         <div className="row row-2">
           <div className="classification">
-            <div className="classification-text">{classification}</div>
           </div>
           <div className="price">${price}</div>
         </div>
