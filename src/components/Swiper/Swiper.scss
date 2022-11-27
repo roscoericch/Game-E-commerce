@@ -1,0 +1,28 @@
+.swiper {
+  grid-column: 1/-1;
+  // @media only screen and (min-width: 600px) {
+  //   display: none;
+  // }
+  &-class {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .arrow-right {
+      font-size: 1.5rem;
+    }
+  }
+}
+.lg-class {
+  @media only screen and (max-width: 600px) {
+    display: none;
+  }
+  width: 80%;
+}
+.sm-class {
+  @media only screen and (min-width: 600px) {
+    display: none;
+  }
+  width: 100%;
+}

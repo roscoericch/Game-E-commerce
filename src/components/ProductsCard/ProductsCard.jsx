@@ -1,5 +1,6 @@
 import React from "react";
 import "./ProductsCard.scss";
+import { motion, AnimatePresence } from "framer-motion";
 import { useSelector, useDispatch } from "react-redux";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
@@ -29,10 +30,11 @@ const ProductsCard = ({ img, title, classification, price, id }) => {
     dispatch(removeItemFromFavourite(favouriteItem, Product));
   const navigate = useNavigate();
   const goToNavigateHandler = () => {
-    navigate(`/${id}`);
+    navigate(`/checkout/${id}`);
   };
   const active = favouriteItem.some((e) => e.id === Product.id);
   const AddedToCart = cartItem.some((e) => e.id === Product.id);
+  const [isVisible, setVisible] = useState(false);
   return (
     <div className="CardContainer">
       <img
@@ -46,9 +48,17 @@ const ProductsCard = ({ img, title, classification, price, id }) => {
         <div className="row row-1">
           <h3 className="title">{title}</h3>
           {active ? (
-            <BsHeartFill className="heart" onClick={Unfavourite} />
+            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}>
+              <BsHeartFill
+                // transition={{ duration: 1 }}
+                className="heart"
+                onClick={Unfavourite}
+              />
+            </motion.div>
           ) : (
-            <BsHeart className="heart" onClick={Favourite} />
+            <motion.div initial={{ scale: 0 }} animate={{ scale: 1 }}>
+              <BsHeart className="heart" onClick={Favourite} />
+            </motion.div>
           )}
         </div>
         <div className="row row-2">

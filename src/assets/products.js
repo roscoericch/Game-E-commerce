@@ -369,6 +369,30 @@ export const Products = [
     Image: "https://i.ibb.co/H48Y3t4/0-PF4r8-CQBzo-BVg-L4-Urxbm-Jl-J.jpg",
     category: "game",
   },
+  {
+    id: 45,
+    Name: "Dare Devil",
+    Price: 77,
+    Genre: "Adventure",
+    Image: src10,
+    category: "game",
+  },
+  {
+    id: 46,
+    Name: "Fight Fury",
+    Price: 67,
+    Genre: "Adventure",
+    Image: src11,
+    category: "game",
+  },
+  {
+    id: 47,
+    Name: "N7",
+    Price: 48,
+    Genre: "Adventure",
+    Image: src12,
+    category: "game",
+  },
 ];
 export const Recommended = [
   {

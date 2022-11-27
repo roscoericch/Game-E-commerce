@@ -9,12 +9,9 @@
   display: flex;
   justify-content: center;
   .lg-img {
-    width: 100%;
+    // width: 35rem;
     border-radius: 10px;
     height: 30rem;
-    @media only screen and (max-width: 600px) {
-      height: 25rem;
-    }
   }
   .tag {
     background-color: rgba(3, 3, 3, 0.26);
@@ -22,7 +19,10 @@
     padding: 0.5rem;
     position: absolute;
     top: 2%;
-    right: 5%;
+    right: 2%;
+    @media only screen and (max-width: 600px) {
+      right: 25%;
+    }
 
     .star {
       color: gold;
@@ -36,8 +36,11 @@
     justify-self: stretch;
     justify-content: center;
     position: absolute;
-    bottom: 5%;
-    left: 10%;
+    bottom: 2%;
+    left: 2%;
+    @media only screen and (max-width: 600px) {
+      left: 25%;
+    }
   }
 
   border-radius: 10px;
@@ -57,9 +60,27 @@
     display: inline-flex;
     align-self: flex-start;
     justify-self: flex-start;
+    position: relative;
+
+    .icon {
+      position: absolute;
+      top: 2%;
+      left: 2%;
+      transform: rotate(95deg);
+      color: #fa1212;
+      // color:#06bb06;
+      font-size: 2rem;
+      @media only screen and (max-width: 600px) {
+        left: 25%;
+      }
+    }
+  }
+  .btn-price {
+    margin-bottom: 1rem;
   }
   .classification {
     grid-column: 1/-1;
     justify-self: baseline;
+    // color: #08973f;
   }
 }

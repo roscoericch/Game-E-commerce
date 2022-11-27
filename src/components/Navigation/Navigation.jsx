@@ -33,27 +33,6 @@ const Navigation = () => {
     <>
       <div className="header">
         <img src={BrandLogo} className="logo-img" />
-        {/* <Autocomplete
-          freeSolo
-          id="free-solo-2-demo"
-          disableClearable
-          //   getOptionLabel={(option) => option.Name}
-          style={{ width: 200, padding: 0, margin: 0 }}
-          onChange={(event, value) => {
-            console.log(event, value);
-          }}
-          options={SearchOptions.map((option) => option.Name)}
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              label="Search store"
-              InputProps={{
-                ...params.InputProps,
-                type: "search",
-              }}
-            />
-          )}
-        /> */}
         <div className="profile">
           <BiUser className="userIcon" onClick={() => showOverlay(!overlay)} />
           {user && <h3>{user[0].displayName}</h3>}

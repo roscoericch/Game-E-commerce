@@ -6,9 +6,12 @@
   // width: 10rem;
   .img {
     display: block;
-    height: 10rem;
+    height: 20rem;
     width: 100%;
     border-radius: 6px;
+    @media screen and (max-width: 600px) {
+      height: 10rem;
+    }
   }
   .heart {
     color: rgb(202, 6, 6);

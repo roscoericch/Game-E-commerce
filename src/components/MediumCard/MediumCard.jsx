@@ -15,7 +15,8 @@ import {
 } from "../../store/Cart/cart.Action";
 import { addItemToFavourite } from "../../store/Favourite/Favourite.Action";
 import { removeItemFromFavourite } from "../../store/Favourite/Favourite.Action";
-
+import { MdAddShoppingCart } from "react-icons/md";
+import { BsFillCartCheckFill } from "react-icons/bs";
 const MediumCard = ({ img, title, classification, price, id }) => {
   //   const [active, SetActive] = useState(false);
   const dispatch = useDispatch();
@@ -29,7 +30,7 @@ const MediumCard = ({ img, title, classification, price, id }) => {
     dispatch(removeItemFromFavourite(favouriteItem, Product));
   const navigate = useNavigate();
   const goToNavigateHandler = () => {
-    navigate(`/${id}`);
+    navigate(`/checkout/${id}`);
   };
   const active = favouriteItem.some((e) => e.id === Product.id);
   const AddedToCart = cartItem.some((e) => e.id === Product.id);
@@ -57,11 +58,11 @@ const MediumCard = ({ img, title, classification, price, id }) => {
           </div>
           {AddedToCart ? (
             <div className="removecart-btn" onClick={removeFromCart}>
-              <AiOutlineShoppingCart /> <div>&#10003;</div>
+              <BsFillCartCheckFill />
             </div>
           ) : (
             <div className="addtocart-btn" onClick={addToCart}>
-              <AiOutlineShoppingCart /> <div>+</div>
+              <MdAddShoppingCart />
             </div>
           )}
         </div>

@@ -21,7 +21,7 @@ const FavouritesCard = ({ img, title, classification, price, id }) => {
   const addToCart = () => dispatch(addItemToCart(cartItem, Product));
   const navigate = useNavigate();
   const goToNavigateHandler = () => {
-    navigate(`/${id}`);
+    navigate(`/checkout/${id}`);
   };
   return (
     <div className="FavouritesContainer">
@@ -32,8 +32,6 @@ const FavouritesCard = ({ img, title, classification, price, id }) => {
           <BsHeartFill className="heart" onClick={removeItem} />
         </div>
         <div className="row row-2">
-          <div className="classification">
-          </div>
           <div className="price">${price}</div>
         </div>
         <div className="row row-3">

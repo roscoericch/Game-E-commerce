@@ -10,6 +10,8 @@ import { HiArrowNarrowRight } from "react-icons/hi";
 import { AiFillStar } from "react-icons/ai";
 import { Autoplay, EffectFlip, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import SwiperComp from "../../components/Swiper/Swiper";
+import SwiperMobile from "../../components/Swiper/SwiperMobile";
 // Import Swiper styles
 import "swiper/scss";
 import "swiper/scss/autoplay";
@@ -17,6 +19,41 @@ import "swiper/scss/effect-flip";
 import "swiper/scss/pagination";
 import "swiper/scss/scrollbar";
 const Home = () => {
+  const prod1 = {
+    img: "https://i.ibb.co/4fqbt9h/4x-J8-XB3bi888-QTLZYdl7-Oi0s.jpg",
+    id: "featured1",
+    title: "God Of War",
+    classification: "adventure",
+    price: 110,
+  };
+  const prod2 = {
+    img: "https://i.ibb.co/gwkBPDP/b-F1qm-EL5-RM6a-Mf-L0o-Lcx-Re8-B.jpg",
+    id: "featuredIV",
+    title: "Mortal Kombat",
+    classification: "adventure",
+    price: 80,
+  };
+  const prod3 = {
+    img: "https://i.ibb.co/G7Fz9m6/a3a-Wk7-Rdt8-Lod5-GHVwj-SA8-BW.jpg",
+    id: "featuredV",
+    title: "SteelRising",
+    classification: "adventure",
+    price: 80,
+  };
+  const prod4 = {
+    img: "https://i.ibb.co/qYNvWw3/Mkbq-F5ve-MFZnm-QRtsbm-Qo-NZT.jpg",
+    id: "featured2",
+    title: "FIFA 23",
+    classification: "adventure",
+    price: 150,
+  };
+  const prod5 = {
+    img: "https://i.ibb.co/4Wy8ZrX/78-A5-Nw4-Nqv-AVj0z04-ZW3lr-ZJ.jpg",
+    id: "featured2",
+    title: "Call of duty",
+    classification: "adventure",
+    price: 180,
+  };
   return (
     <motion.div
       initial={{ opacity: 0, translateY: "200px" }}
@@ -24,48 +61,8 @@ const Home = () => {
       className="home-container"
     >
       <h3 className="classification">Your one stop online Gamestore</h3>
-      <div className="swiper">
-        <Swiper
-          modules={[Pagination, EffectFlip, Autoplay]}
-          centeredSlides={true}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          effect="flip"
-          pagination={true}
-          spaceBetween={30}
-        >
-          <SwiperSlide>
-            <LargeCard
-              img="https://i.ibb.co/4fqbt9h/4x-J8-XB3bi888-QTLZYdl7-Oi0s.jpg"
-              id="featured1"
-              title="God Of War"
-              classification="adventure"
-              price={110}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <LargeCard
-              img="https://i.ibb.co/gwkBPDP/b-F1qm-EL5-RM6a-Mf-L0o-Lcx-Re8-B.jpg"
-              id="featuredIV"
-              title="Mortal Kombat"
-              classification="adventure"
-              price={80}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <LargeCard
-              img="https://i.ibb.co/G7Fz9m6/a3a-Wk7-Rdt8-Lod5-GHVwj-SA8-BW.jpg"
-              id="featuredV"
-              title="SteelRising"
-              classification="adventure"
-              price={80}
-            />
-          </SwiperSlide>
-        </Swiper>
-      </div>
-      <div className="bg-class">
+      <SwiperMobile prod1={prod1} prod2={prod2} prod3={prod3} />
+      <div className="md-class">
         <LargeCard
           img="https://i.ibb.co/4fqbt9h/4x-J8-XB3bi888-QTLZYdl7-Oi0s.jpg"
           id="featured1"
@@ -88,35 +85,15 @@ const Home = () => {
           price={80}
         />
       </div>
-      <div className="swiper">
-        <div className="swiper-class">
-          <div>New</div>
-          <motion.div
-            initial={{ scale: 1 }}
-            animate={{ scale: 1.5 }}
-            transition={{ duration: 1, repeat: Infinity }}
-          >
-            <HiArrowNarrowRight className="arrow-right" />
-          </motion.div>
-        </div>
-        <Swiper Autoplay EffectFade spaceBetween={50} slidesPerView={3}>
-          {Products.filter((e, index) => index > 30).map((e, index) => (
-            <SwiperSlide>
-              <ProductsCard
-                Key={e.id}
-                img={e.Image}
-                title={e.Name}
-                classification={e.Genre}
-                price={e.Price}
-                id={e.id}
-                category={e.category}
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </div>
+      <SwiperComp
+        title={"New"}
+        decor={"sm-class"}
+        nav={false}
+        num={3}
+        limit={[0, 30]}
+      />
       <div className="section">
-        {Products.filter((e, index) => index < 4).map((e, index) => (
+        {Products.filter((e, index) => index < 6).map((e, index) => (
           <MediumCard
             Key={e.id}
             img={e.Image}
@@ -128,132 +105,35 @@ const Home = () => {
           />
         ))}
       </div>
-      <div className="bg-class">
-        {Products.filter((e, index) => index >= 12).map((e) => (
-          <LargeCard
-            key={e.id}
-            img={e.Image}
-            id={e.id}
-            title={e.Name}
-            classification={e.category}
-            price={e.Price}
-          />
-        ))}
-        <LargeCard
-          img="https://i.ibb.co/qYNvWw3/Mkbq-F5ve-MFZnm-QRtsbm-Qo-NZT.jpg"
-          id="featured2"
-          title="FIFA 23"
-          classification="adventure"
-          price={150}
-        />
-        <LargeCard
-          img="https://i.ibb.co/4Wy8ZrX/78-A5-Nw4-Nqv-AVj0z04-ZW3lr-ZJ.jpg"
-          id="featured2"
-          title="Call of duty"
-          classification="adventure"
-          price={180}
-        />
-      </div>
-      <div className="swiper">
-        <Swiper
-          modules={[Pagination, EffectFlip, Autoplay]}
-          centeredSlides={true}
-          autoplay={{
-            delay: 3000,
-            disableOnInteraction: false,
-          }}
-          effect="flip"
-          pagination={true}
-          spaceBetween={30}
-        >
-          <SwiperSlide>
-            <LargeCard
-              img="https://i.ibb.co/4fqbt9h/4x-J8-XB3bi888-QTLZYdl7-Oi0s.jpg"
-              id="featured1"
-              title="God Of War"
-              classification="adventure"
-              price={110}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <LargeCard
-              img="https://i.ibb.co/qYNvWw3/Mkbq-F5ve-MFZnm-QRtsbm-Qo-NZT.jpg"
-              id="featured2"
-              title="FIFA 23"
-              classification="adventure"
-              price={150}
-            />
-          </SwiperSlide>
-          <SwiperSlide>
-            <LargeCard
-              img="https://i.ibb.co/4Wy8ZrX/78-A5-Nw4-Nqv-AVj0z04-ZW3lr-ZJ.jpg"
-              id="featured2"
-              title="Call of duty"
-              classification="adventure"
-              price={180}
-            />
-          </SwiperSlide>
-        </Swiper>
-      </div>
-
-      <div className="swiper">
-        <div className="swiper-class">
-          <div>Recommended</div>
-          <motion.div
-            initial={{ scale: 1 }}
-            animate={{ scale: 1.5 }}
-            transition={{ duration: 1, repeat: Infinity }}
-          >
-            <HiArrowNarrowRight className="arrow-right" />
-          </motion.div>
-        </div>
-        <Swiper Autoplay EffectFade spaceBetween={50} slidesPerView={3}>
-          {Products.filter((e, index) => index > 20 && index < 30).map(
-            (e, index) => (
-              <SwiperSlide>
-                <ProductsCard
-                  Key={e.id}
-                  img={e.Image}
-                  title={e.Name}
-                  classification={e.Genre}
-                  price={e.Price}
-                  id={e.id}
-                  category={e.category}
-                />
-              </SwiperSlide>
-            )
-          )}
-        </Swiper>
-      </div>
-      <div className="swiper">
-        <div className="swiper-class">
-          <div>RATED</div>
-          <motion.div
-            initial={{ scale: 1 }}
-            animate={{ scale: 1.5 }}
-            transition={{ duration: 1, repeat: Infinity }}
-          >
-            <HiArrowNarrowRight className="arrow-right" />
-          </motion.div>
-        </div>
-        <Swiper Autoplay EffectFade spaceBetween={50} slidesPerView={3}>
-          {Products.filter((e, index) => index > 7 && index < 20).map(
-            (e, index) => (
-              <SwiperSlide>
-                <ProductsCard
-                  Key={e.id}
-                  img={e.Image}
-                  title={e.Name}
-                  classification={e.Genre}
-                  price={e.Price}
-                  id={e.id}
-                  category={e.category}
-                />
-              </SwiperSlide>
-            )
-          )}
-        </Swiper>
-      </div>
+      <SwiperMobile prod1={prod4} prod2={prod5} prod3={prod1} />
+      <SwiperComp
+        title={"Recommended"}
+        nav={false}
+        num={3}
+        limit={[20, 30]}
+        decor={"sm-class"}
+      />
+      <SwiperComp
+        title={"Recommended"}
+        nav={true}
+        decor={"bg-class"}
+        num={6}
+        limit={[20, 30]}
+      />
+      <SwiperComp
+        title={"Rated"}
+        limit={[7, 20]}
+        num={3}
+        nav={false}
+        decor={"sm-class"}
+      />
+      <SwiperComp
+        title={"Rated"}
+        limit={[7, 20]}
+        decor={"bg-class"}
+        nav={true}
+        num={6}
+      />
     </motion.div>
   );
 };

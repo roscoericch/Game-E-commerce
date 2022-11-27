@@ -52,18 +52,20 @@ const App = () => {
     return;
   };
   useEffect(() => {
-    const unsubscribe = onAuthStateChangeListener((user) => {
-      if (user) {
-        createUserDocument(user);
-        console.log(user);
-        getData(user.uid);
-        // dispatch(setCurrentUser(user));
-        return;
-      }
-      dispatch(setCurrentUser(user));
-      console.log(currentUser);
-    });
-    return unsubscribe;
+    if (currentUser) {
+      const unsubscribe = onAuthStateChangeListener((user) => {
+        if (user) {
+          createUserDocument(user);
+          console.log(user);
+          getData(user.uid);
+          // dispatch(setCurrentUser(user));
+          return;
+        }
+        dispatch(setCurrentUser(user));
+        console.log(currentUser);
+      });
+      return unsubscribe;
+    }
   }, []);
   return (
     <Routes>
@@ -75,15 +77,16 @@ const App = () => {
       </Route>
       <Route path="/SignIn/" element={<SignInForm />} />
       <Route path="/SignIn/SignUp" element={<SignUpForm />} />
-      {Products.map((item, index) => (
+      <Route path="/checkout/:id" element={<Checkout />} />
+      {/* {Products.map((item, index) => (
         <Route path={`/${item.id}`} element={<Checkout Product={item} />} />
-      ))}
-      {Recommended.map((item, index) => (
+      ))} */}
+      {/* {Recommended.map((item, index) => (
         <Route path={`/${item.id}`} element={<Checkout Product={item} />} />
-      ))}
-      {Market.map((item, index) => (
+      ))} */}
+      {/* {Market.map((item, index) => (
         <Route path={`/${item.id}`} element={<Checkout Product={item} />} />
-      ))}
+      ))} */}
     </Routes>
   );
 };

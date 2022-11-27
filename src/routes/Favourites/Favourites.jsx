@@ -1,6 +1,7 @@
 import React from "react";
 import "./Favourites.scss";
 import FavouritesCard from "../../components/FavouritesCard/FavouritesCard";
+import MediumCard from "../../components/MediumCard/MediumCard";
 import { useSelector } from "react-redux";
 import { selectFavouriteItem } from "../../store/Favourite/Favourite.selector";
 
@@ -10,7 +11,7 @@ const Favourites = () => {
     <div className="features-container">
       {Favourites.length < 1 && <div> No Favourite Items</div>}
       {Favourites.map((e) => (
-        <FavouritesCard
+        <MediumCard
           Key={e.id}
           img={e.img}
           title={e.title}
