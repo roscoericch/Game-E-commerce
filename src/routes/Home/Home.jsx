@@ -62,7 +62,7 @@ const Home = () => {
     >
       <h3 className="classification">Your one stop online Gamestore</h3>
       <SwiperMobile prod1={prod1} prod2={prod2} prod3={prod3} />
-      <div className="md-class">
+      <div className="bg-class md-class">
         <LargeCard
           img="https://i.ibb.co/4fqbt9h/4x-J8-XB3bi888-QTLZYdl7-Oi0s.jpg"
           id="featured1"

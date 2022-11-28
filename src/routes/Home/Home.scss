@@ -37,7 +37,7 @@
     background-size: cover;
     background-repeat: no-repeat;
   }
-  .md-class {
+  .bg-class {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-column: 1/-1;
@@ -46,6 +46,11 @@
     justify-content: space-between;
     align-items: center;
     width: 90%;
+    @media only screen and (max-width: 600px) {
+      display: none;
+    }
+  }
+  .md-class{
     @media only screen and (max-width: 900px) {
       display: none;
     }

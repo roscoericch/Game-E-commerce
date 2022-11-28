@@ -30,7 +30,7 @@ const SwiperComp = ({ title, limit, decor, nav, num }) => {
         navigation={nav}
         Autoplay
         EffectFade
-        spaceBetween={5}
+        spaceBetween={50}
         slidesPerView={num}
       >
         {Products.filter(
